@@ -1,0 +1,4 @@
+TODO: 
+1) Add ubuntu font [✅]
+2) How react router works [🔺]
+3) How to prepare the entire state [🔺]
