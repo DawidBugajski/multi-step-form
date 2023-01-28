@@ -1,0 +1,31 @@
+TODO: 
+Component List:
+1) App.js - glówny komponent który będzie zwracał jedynie kontener który będzie "kontenerem" całej aplikacji
+2) AppContainer - komponent który będzie kontenerem dla całej aplikacji, będzie tutaj trzymany cały state aplikacji, oraz w tym miejscu będziemy decydować które komponenty będą aktualnie wyświetlane (w zależności od aktualnego kroku)
+3) StepNavigator - komponent który będzie zawsze wyświetlany w AppContainer - będzie tutaj informacja ile jest stepów w całej aplikacji, czyli 4, i będziemy pokazywac użytkownikowi który krok aktualnie ma
+
+Kolejne komponenty będą już zależne od state i będą się wyświetlać w zależności od aktualnego stepu:
+
+Step1
+1) PersonalInfo - komponent który będzie wyświetlać formularz w którym użytkownik będzie wpisywać imię i nazwisko, adres e-mail oraz numer telefonu (trzeba będzie zadbać o logikę validacji tych pól)
+2) ButtonNext - komponent który będzie pozwalał przejść użytkownikowi do kolejnego stepu (jeśli użytkownik przejdzie, to w komponencie AppContainer musimy zmienić aktualny komponent PersonalInfo na kolejny)
+Step2
+3) SubscribePlan - komponent pokazujący jaki rodzaj subskrycbji wybierze użytkownik (domyślnie ma być wybrany najtańszy)
+4) SubscribeType - komponent wyświetlający switch w którym użytkownik wybierze czy chce mieć subskrybcję miesięczną czy roczna (ta informacja musi być w state, ponieważ na jej podstawie będą generować się odpowiednie ceny w kolejnych etapach, oraz zawsze wtedy będzie pokazane czy wybrał subskrybcję miesieczną czy roczną)
+5) ButtonNext - ten sam komponent który był w Step1
+6) ButtonPrev - przycisk pozwalający cofnąć się do Step1
+Step3
+7) Addons - komponent w którym będą do wyboru dodatkowe 3 opcje do wykupienia, użytkownik może wybrać który chce co naliczy dodatkową opłatę w STEP4, w tym kroku ten komponent musi pamiętać czy użytkownik w poprzednim stepie wybrał subskrybcję miesęczną czy roczną, ponieważ ceny tutaj też pokażę albo na miesiąc, albo na rok
+ButtonNext - ten sam komponent który był w Step1
+ButtonPrev - przycisk pozwalający cofnąć się do poprzedniego state
+STEP4
+8) Summary - komponent który będzie zawierał informację z poprzednich kroków jakie wybrał użytkownik, będzię się tu zawierać:
+- rodzaj subskrycbji z kroku 2 z informacją czy jest to miesięczny czy roczny wybór - oraz cena, Ważne. tutaj użytkownik będzie mógł kliknąć w "change" które przeniesie go do step2 i użytkownik będzie mógł zmienić SubscribePlan albo SubscribeType, ważne jest, że przechodząc przez kolejne kroki aplikacja musi zapamiętać co użytkownik wybrał, nie może to być zresetowane
+- pokazanie Addons z step3, informacji które użytkownik wykupił oraz ich cena
+- Łączna kwota (per mounth/ per year) w zależności od step2 - i wyliczenie na podstawie wyborów jaka jest to kwota
+ButtonNext - ten sam komponent który był w Step1
+ButtonPrev - przycisk pozwalający cofnąć się do poprzedniego state
+
+Step5
+Po prostu podsumowanie i podziękowanie za zakup.
+

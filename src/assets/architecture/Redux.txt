@@ -1,0 +1,7 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~REDUX~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Stworzyć katalog "store"
+ - W pliku "actions.js" zdefiniuj akcje potrzebne do aplikacji - Akcje te służą do zmieniania stanu aplikacji.
+ - W pliku "reducers.js" zdefiniuj reducery odpowiedzialne za przetwarzanie akcji i aktualizację stanu aplikacji - Reducery służą do zmiany stanu aplikacji na podstawie akcji.
+ - W pliku "store/index.js" stwórz sklep redux i połącz go z aplikacją przy pomocy <Provider> z react-redux
+
+W komponencie AppContainer zaimportować Provider z react-redux i użyć go do otaczania swojego aplikacji. Dzięki temu każdy komponent będzie miał dostęp do stanu aplikacji.

@@ -1,0 +1,8 @@
+TODO: 
+Zainstalować i skonfigurować potrzebne biblioteki, takie jak redux i react-router.  [✅]
+Stworzyć katalog "store" w którym będzie znajdował się plik z redux store i plik z akcjami [✅]
+Stworzyć katalog "components" w którym będą znajdowały się wszystkie komponenty aplikacji [✅]
+Stworzyć plik "index.js" w którym będzie znajdował się kod odpowiedzialny za połączenie aplikacji z react-router oraz redux store [✅]
+Stworzyć plik "App.js" w którym będzie znajdował się kod odpowiedzialny za renderowanie całej aplikacji. [✅]
+Stworzyć plik "routes.js" w którym będzie znajdował się kod odpowiedzialny za konfigurację routingu aplikacji. [✅]
+
