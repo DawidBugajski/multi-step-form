@@ -6,3 +6,11 @@ Stworzyć plik "index.js" w którym będzie znajdował się kod odpowiedzialny z
 Stworzyć plik "App.js" w którym będzie znajdował się kod odpowiedzialny za renderowanie całej aplikacji. [✅]
 Stworzyć plik "routes.js" w którym będzie znajdował się kod odpowiedzialny za konfigurację routingu aplikacji. [✅]
 
+
+moja struktura folderu store wygląda następująco
+1) folder slices, w srodku stepsSlice.js
+2) plik action.js
+3) plik reducers.js
+4) plik index.js
+
+Czy jeśli korzystam ze slice, to w ogóle potrzebuje plik action i reducers?
