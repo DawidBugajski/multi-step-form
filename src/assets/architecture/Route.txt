@@ -8,3 +8,7 @@ W pliku "index.js" importuj i umieść komponent <AppContainer> w <Provider>
 Aby używać React Router, zaimportować BrowserRouter z react-router-dom i użyć go do otaczania swojego aplikacji. Następnie musisz stworzyć różne komponenty, które będą odpowiadać za poszczególne route'y (np. Home dla route'u '/' i About dla route'u '/about').
 
 użyć Route i Link z react-router-dom do nawigacji pomiędzy różnymi route'ami.
+
+v6
+
+*  convert all your <Switch> elements to <Routes>
