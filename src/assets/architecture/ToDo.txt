@@ -1,16 +1,22 @@
 TODO: 
-Zainstalować i skonfigurować potrzebne biblioteki, takie jak redux i react-router.  [✅]
-Stworzyć katalog "store" w którym będzie znajdował się plik z redux store i plik z akcjami [✅]
-Stworzyć katalog "components" w którym będą znajdowały się wszystkie komponenty aplikacji [✅]
-Stworzyć plik "index.js" w którym będzie znajdował się kod odpowiedzialny za połączenie aplikacji z react-router oraz redux store [✅]
-Stworzyć plik "App.js" w którym będzie znajdował się kod odpowiedzialny za renderowanie całej aplikacji. [✅]
-Stworzyć plik "routes.js" w którym będzie znajdował się kod odpowiedzialny za konfigurację routingu aplikacji. [✅]
+react-router - jak połączyć z redux toolkit z stepem [💥]
 
+Potrzebuję wprowadzić 1 feature do swojej aplikacji. Chciałbym żebyś mi pomógł z bardzo dokładnym tłumaczeniem oraz z ładną strukturyzacją plików w katalogach.
 
-moja struktura folderu store wygląda następująco
-1) folder slices, w srodku stepsSlice.js
-2) plik action.js
-3) plik reducers.js
-4) plik index.js
+Aktualnie posiadam w redux toolkit slice który odpowiada za wyświetlanie informacji jaki mam step, chcę to usprawnić:
+1) step 1 - chcę w adresie url mieć /personal-info
+2) step 2 - chcę w adresie url mieć /select-plan
+3) step 3- chcę w adresie url mieć /pick-addons
+4) step 4- chcę w adresie url mieć /summary
 
-Czy jeśli korzystam ze slice, to w ogóle potrzebuje plik action i reducers?
+Chcę przerobić mój aktualny kod, tak żeby w AppContainer miał wdrożony routing w następujący sposób:
+
+Current step:{currentStep}</ -> chciałbym żeby currentStep generował informację:
+jeśli step 1 - personal info
+jeśli step 2 - select plan
+jeśli step 3 - pick addons
+jeśli step 4 - summary
+
+Dodatkowo chciałbym, żeby klikając w przyciski które podnoszą ten step, adres url również się aktualizował, narazie żadne komponenty nie muszą się ukrywać itp. Chodzi tylko o zmianę url
+
+musisz tez przewidz8ec ze jak robisz linki to np żeby nie było sytuacji ze wejdziesz na etap 2 nie mając zrobionego 1
