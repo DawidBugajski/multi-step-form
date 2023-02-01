@@ -8,10 +8,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const PersonalInfo = () => {
   const dispatch = useDispatch();
-  const fullName = useSelector((state) => state.personalInfo.fullName);
-  const phoneNumber = useSelector((state) => state.personalInfo.phoneNumber);
-  const email = useSelector((state) => state.personalInfo.email);
-  const error = useSelector((state) => state.personalInfo.error);
+  const { phoneNumber, fullName, email, error } = useSelector(
+    (state) => state.personalInfo
+  );
 
   const handleSetFullName = (e) => {
     let value = e.target.value;
@@ -27,7 +26,20 @@ const PersonalInfo = () => {
   const handleSetPhoneNumber = (e) => {
     dispatch(setPhoneNumber(e.target.value));
   };
-  const handleSetEmail = (e) => dispatch(setEmail(e.target.value));
+  const handleSetEmail = (e) => {
+    dispatch(setEmail(e.target.value));
+  };
+
+  const renderErrorMessage = (field) => {
+    if (error && field.length === 0) {
+      return (
+        <label className='text-sm font-bold text-strawberryRed'>
+          This field is required
+        </label>
+      );
+    }
+    return null;
+  };
 
   return (
     <div>
@@ -38,10 +50,12 @@ const PersonalInfo = () => {
       </p>
       <form>
         <div className='flex flex-col mb-2'>
-          {error && <label>First Name can't be Empty</label>}
-          <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
-            Name *
-          </label>
+          <div className='flex justify-between'>
+            <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
+              Name *
+            </label>
+            {renderErrorMessage(fullName)}
+          </div>
           <input
             className='py-1 pl-2 font-medium border-[1px] rounded-[3px] border-coolGray outline-none mb-3'
             type='text'
@@ -52,9 +66,12 @@ const PersonalInfo = () => {
           />
         </div>
         <div className='flex flex-col mb-2'>
-          <label className='text-sm font-medium text-darkBlue' htmlFor='email'>
-            Email Address *
-          </label>
+          <div className='flex justify-between'>
+            <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
+              Email Address *
+            </label>
+            {renderErrorMessage(email)}
+          </div>
           <input
             className='py-1 pl-2 font-medium border-[1px] rounded-[3px] border-coolGray outline-none mb-3'
             type='email'
@@ -65,9 +82,12 @@ const PersonalInfo = () => {
           />
         </div>
         <div className='flex flex-col mb-2'>
-          <label className='text-sm font-medium text-darkBlue' htmlFor='phone'>
-            Phone Number *
-          </label>
+          <div className='flex justify-between'>
+            <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
+              Phone Number *
+            </label>
+            {renderErrorMessage(phoneNumber)}
+          </div>
           <input
             className='py-1 pl-2 font-medium border-[1px] rounded-[3px] border-coolGray outline-none mb-3'
             id='phone'
@@ -86,9 +106,7 @@ export default PersonalInfo;
 /**
  * todo
  * styliacja:
- * - kolor borderu po kliku
- * - kolor tekstu
- * - te errorry zajebane
- * klikając next -> zachowaj w state name, email adress i phone number, dla wyświetlenia tych informacji w kroku 5 [✅]
- * jeśli klikniesz next a formularz nie jest wypełniony w pełni (required) show some msg with error
+ * - kolor borderu po kliku, i jeśli jest error
+ * zrobienie walidacji w formularzu email
+ * zrobienie walidacji w numerach telefonów
  */

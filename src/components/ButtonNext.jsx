@@ -1,15 +1,27 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setNextStep } from 'store/slices/stepsSlice';
-import FormValidation from 'utils/helpers/FormValidation';
+import { setError } from 'store/slices/personalInfoSlice';
 
 const ButtonNext = () => {
   const dispatch = useDispatch();
-  const isFormValid = FormValidation();
+  const { phoneNumber, fullName, email } = useSelector(
+    (state) => state.personalInfo
+  );
 
   const handleNextStep = () => {
-    // Trzeba tutaj dodać żeby pokazywało error jeśli jest nie tak
-    if (isFormValid) dispatch(setNextStep());
+    if (
+      phoneNumber.length === 0 ||
+      fullName.length === 0 ||
+      email.length === 0
+    ) {
+      dispatch(setError());
+    } else {
+      dispatch(setNextStep());
+      console.log(
+        `username:${fullName}, email addres: ${email}, phone number:${phoneNumber}`
+      );
+    }
   };
 
   return (
@@ -23,5 +35,3 @@ const ButtonNext = () => {
 };
 
 export default ButtonNext;
-
-// On ma tylko sprawdzać czy w PersonalInfo.jsx error zwraca true, jeśli tak to ma być handleNextStep

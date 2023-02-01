@@ -1,10 +1,5 @@
 TODO: 
-Przycisk next:
- - muszę teraz zrobić dwie rzeczy. Po kliknięciu w next, jeśli nie uzupełnione są wszystkie informacje to nie mogę przejść dalej co jest sukcesem. Natomiast muszę spowodować żeby w takim momencie dynamicznie generował się label nad inputem który jest pusty
+- jak po nacisnięciu w ButtonNext formularz ma wygenerować ten label z errorem. 
+- jak dynamicznie generować labeli które brakują 
 
-Co mam zrobić jeśli użytkownik kliknie next step bez zmieniania niczego w formularzu, zgodnie z reduxem na początku error jest na false, czyli sugeruje ze mozesz przejsc dalej, ale nie mozesz tak zrobic 
-
-Przycisk wstecz:
-
-ogarnij przycisk wstecz - logika
-ogarnij logike w button container - on ma się pojawiać tylko od stepu 2
+Potrzebuję teraz zrobić jedną rzecz. Po wciśnięciu przycisku next, jeśli użytkownik nie spełnia wymogów to nie może przejśc do kolejnego stepu. Chciałbym żeby po kliknięciu next w komponencie PersonalInfo wyświetlał się label z informacją "uzupełnij" nad inputem, który nie spełniał wymogów
