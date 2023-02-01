@@ -1,22 +1,10 @@
 TODO: 
-react-router - jak połączyć z redux toolkit z stepem [💥]
+Przycisk next:
+ - muszę teraz zrobić dwie rzeczy. Po kliknięciu w next, jeśli nie uzupełnione są wszystkie informacje to nie mogę przejść dalej co jest sukcesem. Natomiast muszę spowodować żeby w takim momencie dynamicznie generował się label nad inputem który jest pusty
 
-Potrzebuję wprowadzić 1 feature do swojej aplikacji. Chciałbym żebyś mi pomógł z bardzo dokładnym tłumaczeniem oraz z ładną strukturyzacją plików w katalogach.
+Co mam zrobić jeśli użytkownik kliknie next step bez zmieniania niczego w formularzu, zgodnie z reduxem na początku error jest na false, czyli sugeruje ze mozesz przejsc dalej, ale nie mozesz tak zrobic 
 
-Aktualnie posiadam w redux toolkit slice który odpowiada za wyświetlanie informacji jaki mam step, chcę to usprawnić:
-1) step 1 - chcę w adresie url mieć /personal-info
-2) step 2 - chcę w adresie url mieć /select-plan
-3) step 3- chcę w adresie url mieć /pick-addons
-4) step 4- chcę w adresie url mieć /summary
+Przycisk wstecz:
 
-Chcę przerobić mój aktualny kod, tak żeby w AppContainer miał wdrożony routing w następujący sposób:
-
-Current step:{currentStep}</ -> chciałbym żeby currentStep generował informację:
-jeśli step 1 - personal info
-jeśli step 2 - select plan
-jeśli step 3 - pick addons
-jeśli step 4 - summary
-
-Dodatkowo chciałbym, żeby klikając w przyciski które podnoszą ten step, adres url również się aktualizował, narazie żadne komponenty nie muszą się ukrywać itp. Chodzi tylko o zmianę url
-
-musisz tez przewidz8ec ze jak robisz linki to np żeby nie było sytuacji ze wejdziesz na etap 2 nie mając zrobionego 1
+ogarnij przycisk wstecz - logika
+ogarnij logike w button container - on ma się pojawiać tylko od stepu 2
