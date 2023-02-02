@@ -41,6 +41,12 @@ const PersonalInfo = () => {
     return null;
   };
 
+  const inputClass = (field) => {
+    let borderColor = 'border-coolGray';
+    if (error && field.length === 0) borderColor = 'border-strawberryRed';
+    return `py-1 pl-2 font-medium border-[1px] rounded-[3px] ${borderColor} outline-none mb-3`;
+  };
+
   return (
     <div>
       <h2 className='mb-2 text-2xl font-bold text-darkBlue'>Personal info</h2>
@@ -57,9 +63,9 @@ const PersonalInfo = () => {
             {renderErrorMessage(fullName)}
           </div>
           <input
-            className='py-1 pl-2 font-medium border-[1px] rounded-[3px] border-coolGray outline-none mb-3'
+            className={`${inputClass(fullName)} focus:border-purplishBlue`}
             type='text'
-            id='name'
+            id='fullName'
             placeholder='Stephen King'
             value={fullName}
             onChange={handleSetFullName}
@@ -73,7 +79,7 @@ const PersonalInfo = () => {
             {renderErrorMessage(email)}
           </div>
           <input
-            className='py-1 pl-2 font-medium border-[1px] rounded-[3px] border-coolGray outline-none mb-3'
+            className={`${inputClass(email)} focus:border-purplishBlue`}
             type='email'
             id='email'
             placeholder='stephenking@lorem.com'
@@ -89,8 +95,8 @@ const PersonalInfo = () => {
             {renderErrorMessage(phoneNumber)}
           </div>
           <input
-            className='py-1 pl-2 font-medium border-[1px] rounded-[3px] border-coolGray outline-none mb-3'
-            id='phone'
+            className={`${inputClass(phoneNumber)} focus:border-purplishBlue`}
+            id='phoneNumber'
             placeholder='+1 123 456 790'
             value={phoneNumber}
             onChange={handleSetPhoneNumber}
@@ -105,8 +111,8 @@ export default PersonalInfo;
 
 /**
  * todo
- * styliacja:
- * - kolor borderu po kliku, i jeśli jest error
- * zrobienie walidacji w formularzu email
- * zrobienie walidacji w numerach telefonów
+ * ustwienie fontu koloru jak coś wpisujemy [🔺]
+ * zrobienie walidacji w formularzu email [🔺]
+ * zrobienie walidacji w numerach telefonów [🔺]
+ * refaktoryzacja kodu żeby wyjebać wszystko do utils/helpers[🔺]
  */
