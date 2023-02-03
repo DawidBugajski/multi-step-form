@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import SelectPlan from 'routes/SelectPlan';
 import PickAddons from 'routes/PickAddons';
 import Summary from 'routes/Summary';
-import PersonalInfo from 'routes/PersonalInfo';
+import PersonalInfo from 'routes/PersonalInfo/PersonalInfo';
 
 const FormContainer = () => {
   const currentStep = useSelector((state) => state.steps.currentStep);

@@ -5,23 +5,22 @@ import {
   setEmail,
 } from 'store/slices/personalInfoSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  NAME_REGEX,
+  EMAIL_REGEX,
+  PHONE_REGEX,
+} from 'utils/helpers/formValidate';
+import RenderErrorMessage from 'routes/PersonalInfo/RenderErrorMessage';
+import InputClass from 'routes/PersonalInfo/InputClass';
 
 const PersonalInfo = () => {
   const dispatch = useDispatch();
-  const { phoneNumber, fullName, email, error } = useSelector(
+  const { phoneNumber, fullName, email } = useSelector(
     (state) => state.personalInfo
   );
 
   const handleSetFullName = (e) => {
-    let value = e.target.value;
-    if (value.length > 50) {
-      value = value.slice(0, 50);
-    }
-    if (value.match(/\s\s/)) {
-      value = value.replace(/\s\s/g, ' ');
-    }
-    e.target.value = value;
-    dispatch(setFullName(value));
+    dispatch(setFullName(e.target.value));
   };
   const handleSetPhoneNumber = (e) => {
     dispatch(setPhoneNumber(e.target.value));
@@ -30,40 +29,27 @@ const PersonalInfo = () => {
     dispatch(setEmail(e.target.value));
   };
 
-  const renderErrorMessage = (field) => {
-    if (error && field.length === 0) {
-      return (
-        <label className='text-sm font-bold text-strawberryRed'>
-          This field is required
-        </label>
-      );
-    }
-    return null;
-  };
-
-  const inputClass = (field) => {
-    let borderColor = 'border-coolGray';
-    if (error && field.length === 0) borderColor = 'border-strawberryRed';
-    return `py-1 pl-2 font-medium border-[1px] rounded-[3px] ${borderColor} outline-none mb-3`;
-  };
-
   return (
     <div>
       <h2 className='mb-2 text-2xl font-bold text-darkBlue'>Personal info</h2>
       <p className='mb-4 text-coolGray'>
         Please provide you name, email <br />
-        address and phone number.
+        address and phone number{' '}
+        <span className='font-bold'>with area code.</span>
       </p>
       <form>
         <div className='flex flex-col mb-2'>
           <div className='flex justify-between'>
             <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
-              Name *
+              Name <span className='text-strawberryRed'>*</span>
             </label>
-            {renderErrorMessage(fullName)}
+            {RenderErrorMessage(fullName, NAME_REGEX, 'Wrong Name')}
           </div>
           <input
-            className={`${inputClass(fullName)} focus:border-purplishBlue`}
+            className={`${InputClass(
+              fullName,
+              NAME_REGEX
+            )} focus:border-purplishBlue`}
             type='text'
             id='fullName'
             placeholder='Stephen King'
@@ -74,12 +60,15 @@ const PersonalInfo = () => {
         <div className='flex flex-col mb-2'>
           <div className='flex justify-between'>
             <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
-              Email Address *
+              Email Address <span className='text-strawberryRed'>*</span>
             </label>
-            {renderErrorMessage(email)}
+            {RenderErrorMessage(email, EMAIL_REGEX, 'Wrong Email Address')}
           </div>
           <input
-            className={`${inputClass(email)} focus:border-purplishBlue`}
+            className={`${InputClass(
+              email,
+              EMAIL_REGEX
+            )} focus:border-purplishBlue`}
             type='email'
             id='email'
             placeholder='stephenking@lorem.com'
@@ -90,14 +79,17 @@ const PersonalInfo = () => {
         <div className='flex flex-col mb-2'>
           <div className='flex justify-between'>
             <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
-              Phone Number *
+              Phone Number <span className='text-strawberryRed'>*</span>
             </label>
-            {renderErrorMessage(phoneNumber)}
+            {RenderErrorMessage(phoneNumber, PHONE_REGEX, 'Wrong Number')}
           </div>
           <input
-            className={`${inputClass(phoneNumber)} focus:border-purplishBlue`}
+            className={`${InputClass(
+              phoneNumber,
+              PHONE_REGEX
+            )} focus:border-purplishBlue`}
             id='phoneNumber'
-            placeholder='+1 123 456 790'
+            placeholder='+12 123 456 790'
             value={phoneNumber}
             onChange={handleSetPhoneNumber}
           />
@@ -108,11 +100,3 @@ const PersonalInfo = () => {
 };
 
 export default PersonalInfo;
-
-/**
- * todo
- * ustwienie fontu koloru jak coś wpisujemy [🔺]
- * zrobienie walidacji w formularzu email [🔺]
- * zrobienie walidacji w numerach telefonów [🔺]
- * refaktoryzacja kodu żeby wyjebać wszystko do utils/helpers[🔺]
- */

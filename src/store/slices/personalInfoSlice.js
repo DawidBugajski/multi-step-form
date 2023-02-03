@@ -11,15 +11,12 @@ const personalInfoSlice = createSlice({
   reducers: {
     setFullName: (state, action) => {
       state.fullName = action.payload;
-      // console.log(state.fullName);
     },
     setPhoneNumber: (state, action) => {
       state.phoneNumber = action.payload;
-      // console.log(state.phoneNumber);
     },
     setEmail: (state, action) => {
       state.email = action.payload;
-      // console.log(state.email);
     },
     setError: (state) => {
       state.error = true;
