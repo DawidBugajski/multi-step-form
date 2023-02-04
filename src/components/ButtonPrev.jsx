@@ -8,9 +8,9 @@ const ButtonPrev = () => {
   return (
     <button
       onClick={handlePrevStep}
-      className='py-2 px-3 font-medium text-center text-white rounded-[5px] bg-darkBlue'
+      className='px-3 py-2 font-medium text-center transition-colors duration-100 ease-linear text-coolGray hover:text-darkBlue'
     >
-      Prev Step
+      Go Back
     </button>
   );
 };

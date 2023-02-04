@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import SelectPlan from 'routes/SelectPlan';
+import SelectPlan from 'routes/Subscription/SelectPlan';
 import PickAddons from 'routes/PickAddons';
 import Summary from 'routes/Summary';
 import PersonalInfo from 'routes/PersonalInfo/PersonalInfo';

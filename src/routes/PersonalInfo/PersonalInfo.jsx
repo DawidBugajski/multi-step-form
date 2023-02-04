@@ -12,6 +12,7 @@ import {
 } from 'utils/helpers/formValidate';
 import RenderErrorMessage from 'routes/PersonalInfo/RenderErrorMessage';
 import InputClass from 'routes/PersonalInfo/InputClass';
+import TextContent from 'components/TextContent';
 
 const PersonalInfo = () => {
   const dispatch = useDispatch();
@@ -31,12 +32,16 @@ const PersonalInfo = () => {
 
   return (
     <div>
-      <h2 className='mb-2 text-2xl font-bold text-darkBlue'>Personal info</h2>
-      <p className='mb-4 text-coolGray'>
-        Please provide you name, email <br />
-        address and phone number{' '}
-        <span className='font-bold'>with area code.</span>
-      </p>
+      <TextContent
+        title='Personal info'
+        text={
+          <>
+            Please provide you name, email <br />
+            address and phone number{' '}
+            <span className='font-bold'>with area code.</span>
+          </>
+        }
+      />
       <form>
         <div className='flex flex-col mb-2'>
           <div className='flex justify-between'>
