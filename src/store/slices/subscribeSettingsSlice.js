@@ -31,7 +31,7 @@ const subscribeSettingsSlice = createSlice({
   name: 'subscribeSettings',
   initialState: {
     subType: subscriptionTypes[0].type,
-    isMonthly: true,
+    isMonthly: false,
   },
   reducers: {
     setSubType: (state, action) => {
@@ -46,6 +46,3 @@ const subscribeSettingsSlice = createSlice({
 export const { setSubType, setSubPayment } = subscribeSettingsSlice.actions;
 export { subscriptionTypes };
 export default subscribeSettingsSlice.reducer;
-
-// jak zweryfikować czy subType i subPayment jest prawidłowo połączone z subscriptionTypes i subscriptionTypesPayments
-// ! coś tu jest nie tak z tym połączeniem

@@ -15,6 +15,10 @@ const SelectPlan = () => {
         }
       />
       <SubscriptionCards />
+      <div className='flex'>
+        <p>Monthly</p>
+        <p>Yearly</p>
+      </div>
     </div>
   );
 };
