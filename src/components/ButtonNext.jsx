@@ -13,11 +13,13 @@ const ButtonNext = () => {
   const { phoneNumber, fullName, email } = useSelector(
     (state) => state.personalInfo
   );
+  const { currentStep } = useSelector((state) => state.steps);
 
   const error =
-    !fullName.match(NAME_REGEX) ||
-    !phoneNumber.match(PHONE_REGEX) ||
-    !email.match(EMAIL_REGEX);
+    currentStep === 1 &&
+    (!fullName.match(NAME_REGEX) ||
+      !phoneNumber.match(PHONE_REGEX) ||
+      !email.match(EMAIL_REGEX));
 
   const handleNextStep = () =>
     error ? dispatch(setError()) : dispatch(setNextStep());
