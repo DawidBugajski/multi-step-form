@@ -7,7 +7,7 @@ const subscriptionTypes = [
       monthly: 9,
       yearly: 90,
     },
-    icon: '/src/assets/images/icon-arcade.svg',
+    icon: '/images/icon-arcade.svg',
   },
   {
     type: 'Advanced',
@@ -15,7 +15,7 @@ const subscriptionTypes = [
       monthly: 12,
       yearly: 120,
     },
-    icon: '/src/assets/images/icon-advanced.svg',
+    icon: '/images/icon-advanced.svg',
   },
   {
     type: 'Pro',
@@ -23,27 +23,29 @@ const subscriptionTypes = [
       monthly: 15,
       yearly: 150,
     },
-    icon: '/src/assets/images/icon-pro.svg',
+    icon: 'images/icon-pro.svg',
   },
 ];
-
-const subscriptionTypesPayments = ['Monthly', 'Yearly'];
 
 const subscribeSettingsSlice = createSlice({
   name: 'subscribeSettings',
   initialState: {
     subType: subscriptionTypes[0].type,
-    subPayment: subscriptionTypesPayments[0],
+    isMonthly: true,
   },
   reducers: {
     setSubType: (state, action) => {
       state.subType = action.payload;
     },
-    setSubPayment: (state, action) => {
-      state.subPayment = action.payload;
+    setSubPayment: (state) => {
+      state.isMonthly = false;
     },
   },
 });
 
 export const { setSubType, setSubPayment } = subscribeSettingsSlice.actions;
+export { subscriptionTypes };
 export default subscribeSettingsSlice.reducer;
+
+// jak zweryfikować czy subType i subPayment jest prawidłowo połączone z subscriptionTypes i subscriptionTypesPayments
+// ! coś tu jest nie tak z tym połączeniem

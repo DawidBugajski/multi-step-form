@@ -1,5 +1,6 @@
 import React from 'react';
 import TextContent from 'components/TextContent';
+import SubscriptionCards from './SubscriptionCards';
 
 const SelectPlan = () => {
   return (
@@ -13,6 +14,7 @@ const SelectPlan = () => {
           </>
         }
       />
+      <SubscriptionCards />
     </div>
   );
 };
