@@ -11,7 +11,6 @@ const AppContainer = () => {
     <div className='flex flex-col h-screen overflow-hidden bg-magnolia'>
       <StepNavigator currentStep={currentStep} />
       <FormContainer />
-      <div className='flex-grow'></div>
       <ButtonContainer currentStep={currentStep} />
     </div>
   );

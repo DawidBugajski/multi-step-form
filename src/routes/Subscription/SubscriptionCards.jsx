@@ -34,13 +34,13 @@ const SubscriptionCards = () => {
           key={type}
         >
           <img className='pr-4' src={icon} alt={`${type} subscription icon`} />
-          <div className='leading-4'>
-            <h3 className='font-medium text-darkBlue'>{type}</h3>
-            <p className='text-sm text-coolGray'>{`$${paymentPeriod(
-              price
-            )}`}</p>
+          <div className=''>
+            <h3 className='text-lg font-medium text-darkBlue'>{type}</h3>
+            <p className=' text-coolGray'>{`$${paymentPeriod(price)}`}</p>
             {!isMonthly && (
-              <span className='text-xs text-darkBlue '>2 months free</span>
+              <span className='text-sm font-medium text-darkBlue'>
+                2 months free
+              </span>
             )}
           </div>
         </div>

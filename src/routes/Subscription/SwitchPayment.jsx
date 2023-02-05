@@ -15,7 +15,7 @@ const SwitchPayment = () => {
   };
 
   return (
-    <div className='flex items-center justify-center p-2 mt-4 mb-2 rounded-md bg-magnolia'>
+    <div className='flex items-center justify-center p-4 mt-8 mb-2 rounded-md bg-magnolia'>
       <label className={activeClass(isMonthly)}>Monthly</label>
       <Switch checked={isMonthly} onChange={handlePaymentSwitch} />
       <label className={activeClass(!isMonthly)}>Yearly</label>
@@ -24,8 +24,3 @@ const SwitchPayment = () => {
 };
 
 export default SwitchPayment;
-
-/*
-TODO
-- klikając next zwerfiykuj czy na pewno dobrze jest wybrany: Typ Subskrybcji, jego wartośc, i rodzaj płatności
-*/

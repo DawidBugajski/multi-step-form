@@ -11,7 +11,7 @@ const SelectPlan = () => {
         text={
           <>
             You have the option of monthly or <br />
-            yearly billing
+            yearly billing.
           </>
         }
       />

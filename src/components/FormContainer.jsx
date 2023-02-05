@@ -24,7 +24,7 @@ const FormContainer = () => {
   };
 
   return (
-    <div className='w-11/12 px-5 pt-4 pb-3 mx-auto -mt-16 bg-white rounded-[0.7rem] shadow-xl'>
+    <div className='w-11/12 p-6 mx-auto -mt-[57px] bg-white rounded-[0.7rem] shadow-xl'>
       {displayCurrentStep()}
     </div>
   );
