@@ -6,3 +6,18 @@
 body {
   font-family: 'ubuntu', sans-serif;
 }
+
+.ant-switch,
+.ant-switch:hover {
+  background-color: hsl(213, 96%, 18%) !important;
+}
+
+:where(.css-dev-only-do-not-override-ixblex).ant-switch .ant-switch-handle {
+  width: 13px !important;
+  height: 13px !important;
+  top: 5px !important;
+}
+
+:where(.css-dev-only-do-not-override-ixblex).ant-switch .ant-switch-handle {
+  inset-inline-start: 4px;
+}

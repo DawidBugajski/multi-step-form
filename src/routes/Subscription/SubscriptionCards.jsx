@@ -1,8 +1,10 @@
 import React from 'react';
 import { subscriptionTypes } from 'store/slices/subscribeSettingsSlice';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSubType } from 'store/slices/subscribeSettingsSlice';
 
 const SubscriptionCards = () => {
+  const dispatch = useDispatch();
   const { subType, isMonthly } = useSelector(
     (state) => state.subscribeSettings
   );
@@ -17,11 +19,16 @@ const SubscriptionCards = () => {
     return isMonthly ? `${price.monthly}/mo` : `${price.yearly}/yr`;
   };
 
+  const handleSubscriptionType = (type) => {
+    dispatch(setSubType(type));
+  };
+
   return (
     <>
       {subscriptionTypes.map(({ type, price, icon }) => (
         <div
-          className={`flex rounded-md border-[1px] items-center p-2 mb-3 ${activeSubscriptionType(
+          onClick={() => handleSubscriptionType(type)}
+          className={`flex rounded-md border-[1px] items-center p-3 mb-3 cursor-pointer ${activeSubscriptionType(
             type
           )}`}
           key={type}

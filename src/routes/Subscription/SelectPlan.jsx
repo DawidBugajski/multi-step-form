@@ -1,6 +1,7 @@
 import React from 'react';
 import TextContent from 'components/TextContent';
-import SubscriptionCards from './SubscriptionCards';
+import SubscriptionCards from 'routes/Subscription/SubscriptionCards';
+import SwitchPayment from 'routes/Subscription/SwitchPayment';
 
 const SelectPlan = () => {
   return (
@@ -15,10 +16,7 @@ const SelectPlan = () => {
         }
       />
       <SubscriptionCards />
-      <div className='flex'>
-        <p>Monthly</p>
-        <p>Yearly</p>
-      </div>
+      <SwitchPayment />
     </div>
   );
 };
