@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import SelectPlan from 'routes/Subscription/SelectPlan';
-import PickAddons from 'routes/PickAddons';
+import PickAddons from 'routes/Addons/PickAddons';
 import Summary from 'routes/Summary';
 import PersonalInfo from 'routes/PersonalInfo/PersonalInfo';
 
@@ -24,7 +24,7 @@ const FormContainer = () => {
   };
 
   return (
-    <div className='w-11/12 p-6 mx-auto -mt-[57px] bg-white rounded-[0.7rem] shadow-xl'>
+    <div className='w-11/12 p-6 mx-auto -mt-[47px] bg-white rounded-[0.7rem] shadow-xl'>
       {displayCurrentStep()}
     </div>
   );
