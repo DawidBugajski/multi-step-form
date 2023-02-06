@@ -30,12 +30,15 @@ const subscriptionTypes = [
 const subscribeSettingsSlice = createSlice({
   name: 'subscribeSettings',
   initialState: {
-    subType: subscriptionTypes[0].type,
+    subType: subscriptionTypes[0],
     isMonthly: true,
   },
   reducers: {
     setSubType: (state, action) => {
-      state.subType = action.payload;
+      const newSubType = subscriptionTypes.find(
+        (subType) => subType.type === action.payload
+      );
+      state.subType = newSubType;
     },
     setSubPayment: (state) => {
       state.isMonthly = !state.isMonthly;

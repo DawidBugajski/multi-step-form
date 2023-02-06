@@ -33,12 +33,15 @@ const additionalAddonsSlice = createSlice({
     pickedAddons: [],
   },
   reducers: {
-    setAddAddon: (state, action) =>
-      (state.pickedAddons = [...state.pickedAddons, action.payload]),
-    setRemoveAddon: (state, action) =>
-      (state.pickedAddons = state.pickedAddons.filter(
-        (addon) => addon.type !== action.payload.type
-      )),
+    setAddAddon: (state, action) => {
+      state.pickedAddons.push(action.payload);
+    },
+    setRemoveAddon: (state, action) => {
+      const itemIndex = state.pickedAddons.findIndex(
+        (addon) => addon.type === action.payload.type
+      );
+      state.pickedAddons.splice(itemIndex, 1);
+    },
   },
 });
 

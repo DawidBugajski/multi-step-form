@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import SelectPlan from 'routes/Subscription/SelectPlan';
 import PickAddons from 'routes/Addons/PickAddons';
-import Summary from 'routes/Summary';
+import Summary from 'routes/Summary/Summary';
 import PersonalInfo from 'routes/PersonalInfo/PersonalInfo';
 
 const FormContainer = () => {

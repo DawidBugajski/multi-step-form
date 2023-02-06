@@ -1,6 +1,6 @@
 import React from 'react';
 import TextContent from 'components/TextContent';
-import AddonCards from './AddonCards';
+import AddonCards from 'routes/Addons/AddonCards';
 
 const PickAddons = () => {
   return (
