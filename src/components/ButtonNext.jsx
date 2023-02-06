@@ -24,12 +24,14 @@ const ButtonNext = () => {
   const handleNextStep = () =>
     error ? dispatch(setError()) : dispatch(setNextStep());
 
+  const lastStep = currentStep === 4;
+
   return (
     <button
       onClick={handleNextStep}
       className='py-2 px-3 font-medium text-center text-white rounded-[5px] bg-darkBlue hover:bg-purplishBlue transition-colors duration-100 ease-linear'
     >
-      Next Step
+      {lastStep ? 'Confirm' : 'Next Step'}
     </button>
   );
 };

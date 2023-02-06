@@ -1,6 +1,7 @@
 import React from 'react';
 import TextContent from 'components/TextContent';
 import ChosedOptions from 'routes/Summary/ChosedOptions';
+import TotalCost from './TotalCost';
 
 const Summary = () => {
   return (
@@ -10,6 +11,7 @@ const Summary = () => {
         text='Double-check everything looks OK before confirming.'
       />
       <ChosedOptions />
+      <TotalCost />
     </div>
   );
 };
