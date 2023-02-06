@@ -9,24 +9,15 @@ const TotalCost = () => {
 
   const TotalCost = (isMonthly, subType, pickedAddons) => {
     let totalCost = 0;
-    if (isMonthly) {
-      totalCost += subType.price.monthly;
-      pickedAddons.forEach((addon) => {
-        if (addon.price) {
-          totalCost += addon.price.monthly;
-        }
-      });
-    } else {
-      totalCost += subType.price.yearly;
-      pickedAddons.forEach((addon) => {
-        if (addon.price) {
-          totalCost += addon.price.yearly;
-        }
-      });
-    }
+    const { monthly: subTypeMonthly, yearly: subTypeYearly } = subType.price;
+    totalCost += isMonthly ? subTypeMonthly : subTypeYearly;
+
+    pickedAddons.forEach(({ price: { monthly, yearly } }) => {
+      totalCost += isMonthly ? monthly : yearly;
+    });
+
     return totalCost;
   };
-
   return (
     <div className='flex justify-between p-5'>
       <p className='text-coolGray'>
@@ -42,5 +33,3 @@ const TotalCost = () => {
 };
 
 export default TotalCost;
-
-// refaktoryzacja

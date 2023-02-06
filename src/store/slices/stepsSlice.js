@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const stepsSlice = createSlice({
   name: 'steps',
   initialState: {
-    currentStep: 4,
+    currentStep: 1,
   },
   reducers: {
     setNextStep: (state) => {
