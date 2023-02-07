@@ -36,8 +36,7 @@ const PersonalInfo = () => {
         title='Personal info'
         text={
           <>
-            Please provide you name, email <br />
-            address and phone number{' '}
+            Please provide you name, email address and phone number{' '}
             <span className='font-bold'>with area code.</span>
           </>
         }

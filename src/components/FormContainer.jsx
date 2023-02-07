@@ -25,7 +25,7 @@ const FormContainer = () => {
   };
 
   return (
-    <div className='w-11/12 p-6 mx-auto -mt-[61px] bg-white rounded-[0.7rem] shadow-xl lg:shadow-none lg:m-0 lg:px-20 lg:pt-10'>
+    <div className='w-11/12 p-6 mx-auto -mt-[61px] bg-white rounded-[0.7rem] shadow-xl lg:shadow-none lg:m-0 lg:px-0 lg:w-auto lg:pb-0'>
       {displayCurrentStep()}
     </div>
   );

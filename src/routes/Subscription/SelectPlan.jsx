@@ -8,12 +8,7 @@ const SelectPlan = () => {
     <div>
       <TextContent
         title='Select your plan'
-        text={
-          <>
-            You have the option of monthly or <br />
-            yearly billing.
-          </>
-        }
+        text={<>You have the option of monthly or yearly billing.</>}
       />
       <SubscriptionCards />
       <SwitchPayment />

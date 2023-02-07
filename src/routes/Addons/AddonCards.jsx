@@ -42,8 +42,12 @@ const AddonCards = () => {
           />
 
           <div className='flex flex-col flex-grow tracking-tight'>
-            <h3 className='font-medium text-darkBlue'>{type}</h3>
-            <p className='text-sm text-coolGray'>{text}</p>
+            <h3 className='text-lg font-medium text-darkBlue lg:font-bold'>
+              {type}
+            </h3>
+            <p className='text-sm font-medium text-coolGray lg:text-md'>
+              {text}
+            </p>
           </div>
           <p className='text-xs font-medium text-purplishBlue'>{`+$${paymentPeriod(
             price,
