@@ -7,7 +7,7 @@ const TotalCost = () => {
   );
   const { pickedAddons } = useSelector((state) => state.addons);
 
-  const TotalCost = (isMonthly, subType, pickedAddons) => {
+  const getTotalCost = (isMonthly, subType, pickedAddons) => {
     let totalCost = 0;
     const { monthly: subTypeMonthly, yearly: subTypeYearly } = subType.price;
     totalCost += isMonthly ? subTypeMonthly : subTypeYearly;
@@ -24,7 +24,7 @@ const TotalCost = () => {
         Total {isMonthly ? '(per month)' : '(per year)'}
       </p>
       <p className='font-bold text-purplishBlue'>
-        {`$${TotalCost(isMonthly, subType, pickedAddons)}${
+        {`$${getTotalCost(isMonthly, subType, pickedAddons)}${
           isMonthly ? '/mo' : '/yr'
         }`}
       </p>

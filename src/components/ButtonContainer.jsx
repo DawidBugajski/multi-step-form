@@ -3,7 +3,8 @@ import ButtonNext from './ButtonNext';
 import ButtonPrev from './ButtonPrev';
 
 const ButtonContainer = ({ currentStep }) => {
-  const classes = 'absolute bottom-0 w-full flex bg-white p-4';
+  const classes =
+    'absolute bottom-0 w-full flex bg-white p-4 lg:bg-transparent lg:px-[6rem] lg:pt-[2rem] lg:pb-[2rem]';
   const className =
     currentStep >= 2 ? `${classes} justify-between` : `${classes} justify-end`;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setNextStep } from 'store/slices/stepsSlice';
+import { setNextStep, setConfirmed } from 'store/slices/stepsSlice';
 import { setError } from 'store/slices/personalInfoSlice';
 import {
   NAME_REGEX,
@@ -21,10 +21,12 @@ const ButtonNext = () => {
       !phoneNumber.match(PHONE_REGEX) ||
       !email.match(EMAIL_REGEX));
 
-  const handleNextStep = () =>
-    error ? dispatch(setError()) : dispatch(setNextStep());
-
   const lastStep = currentStep === 4;
+
+  const handleNextStep = () => {
+    error ? dispatch(setError()) : dispatch(setNextStep());
+    if (lastStep) dispatch(setConfirmed(true));
+  };
 
   return (
     <button

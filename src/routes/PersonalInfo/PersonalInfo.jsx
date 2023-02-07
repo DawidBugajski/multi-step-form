@@ -57,7 +57,7 @@ const PersonalInfo = () => {
             )} focus:border-purplishBlue`}
             type='text'
             id='fullName'
-            placeholder='Stephen King'
+            placeholder='Stephen King (max 30 characters)'
             value={fullName}
             onChange={handleSetFullName}
           />

@@ -1,5 +1,0 @@
-TODO: 
-- jak po nacisnięciu w ButtonNext formularz ma wygenerować ten label z errorem. 
-- jak dynamicznie generować labeli które brakują 
-
-Potrzebuję teraz zrobić jedną rzecz. Po wciśnięciu przycisku next, jeśli użytkownik nie spełnia wymogów to nie może przejśc do kolejnego stepu. Chciałbym żeby po kliknięciu next w komponencie PersonalInfo wyświetlał się label z informacją "uzupełnij" nad inputem, który nie spełniał wymogów
