@@ -20,6 +20,9 @@ module.exports = {
         'sidebar-mobile': "url('/public/images/bg-sidebar-mobile.svg')",
         'sidebar-desktop': "url('/public/images/bg-sidebar-desktop.svg')",
       },
+      screens: {
+        desktop: '1400px',
+      },
     },
   },
   plugins: [],

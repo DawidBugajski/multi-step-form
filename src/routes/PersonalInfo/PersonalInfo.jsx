@@ -44,7 +44,10 @@ const PersonalInfo = () => {
       <form>
         <div className='flex flex-col mb-2'>
           <div className='flex justify-between'>
-            <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
+            <label
+              className='text-sm font-medium text-darkBlue 2xl:text-lg'
+              htmlFor='name'
+            >
               Name <span className='text-strawberryRed'>*</span>
             </label>
             {RenderErrorMessage(fullName, NAME_REGEX, 'Wrong Name')}
@@ -63,7 +66,10 @@ const PersonalInfo = () => {
         </div>
         <div className='flex flex-col mb-2'>
           <div className='flex justify-between'>
-            <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
+            <label
+              className='text-sm font-medium text-darkBlue 2xl:text-lg'
+              htmlFor='name'
+            >
               Email Address <span className='text-strawberryRed'>*</span>
             </label>
             {RenderErrorMessage(email, EMAIL_REGEX, 'Wrong Email Address')}
@@ -82,7 +88,10 @@ const PersonalInfo = () => {
         </div>
         <div className='flex flex-col mb-2'>
           <div className='flex justify-between'>
-            <label className='text-sm font-medium text-darkBlue' htmlFor='name'>
+            <label
+              className='text-sm font-medium text-darkBlue 2xl:text-lg'
+              htmlFor='name'
+            >
               Phone Number <span className='text-strawberryRed'>*</span>
             </label>
             {RenderErrorMessage(phoneNumber, PHONE_REGEX, 'Wrong Number')}

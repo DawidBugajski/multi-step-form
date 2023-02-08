@@ -49,7 +49,7 @@ const AddonCards = () => {
               {text}
             </p>
           </div>
-          <p className='text-xs font-medium text-purplishBlue'>{`+$${paymentPeriod(
+          <p className='text-xs font-medium text-purplishBlue lg:text-sm desktop:text-base'>{`+$${paymentPeriod(
             price,
             isMonthly
           )}`}</p>

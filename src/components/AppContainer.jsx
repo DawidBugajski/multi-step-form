@@ -9,9 +9,9 @@ const AppContainer = () => {
 
   return (
     <div className='flex flex-col h-screen overflow-hidden lg:justify-center bg-magnolia items '>
-      <div className='lg:relative lg:bg-white lg:rounded-lg lg:flex lg:p-4 lg:w-10/12 lg:justify-between lg:mx-auto lg:shadow-lg lg:h-4/6'>
+      <div className='lg:relative lg:bg-white lg:rounded-lg lg:flex lg:p-4 lg:w-10/12 lg:justify-between lg:mx-auto lg:shadow-2xl lg:h-4/6 xl:w-9/12 desktop:w-8/12 2xl:w-7/12'>
         <StepNavigator currentStep={currentStep} />
-        <div className='flex-grow lg:flex lg:flex-col lg:px-14 lg:justify-between lg:pt-8'>
+        <div className='flex-grow lg:overflow-hidden lg:flex lg:flex-col lg:px-14 lg:justify-between lg:pt-8 2xl:px-20'>
           <FormContainer />
           {!isConfirmed && <ButtonContainer currentStep={currentStep} />}
         </div>

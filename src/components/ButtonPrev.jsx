@@ -8,7 +8,7 @@ const ButtonPrev = () => {
   return (
     <button
       onClick={handlePrevStep}
-      className='px-3 py-2 font-medium text-center transition-colors duration-100 ease-linear text-coolGray hover:text-darkBlue'
+      className='px-3 py-2 font-medium text-center transition-colors duration-100 ease-linear text-coolGray hover:text-darkBlue 2xl:text-lg '
     >
       Go Back
     </button>

@@ -31,7 +31,7 @@ const ButtonNext = () => {
   return (
     <button
       onClick={handleNextStep}
-      className='py-2 px-3 font-medium text-center text-white rounded-[5px] bg-darkBlue hover:bg-purplishBlue transition-colors duration-100 ease-linear lg:w-28'
+      className='py-2 px-3 font-medium text-center text-white rounded-[5px] bg-darkBlue hover:bg-purplishBlue transition-colors duration-100 ease-linear lg:w-28 2xl:text-lg '
     >
       {lastStep ? 'Confirm' : 'Next Step'}
     </button>

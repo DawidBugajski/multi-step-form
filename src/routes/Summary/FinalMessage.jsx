@@ -15,7 +15,7 @@ const FinalMessage = () => {
   return (
     <div className='pb-12 text-center'>
       <img
-        className='pt-12 mx-auto scale-75'
+        className='py-4 mx-auto scale-75 lg:scale-100'
         src='/images/icon-thank-you.svg'
         alt='icon-thank-you'
       />
@@ -23,11 +23,12 @@ const FinalMessage = () => {
         title='Thank You!'
         text={
           <>
-            <strong className='text-darkBlue'>{fullName}</strong>, Thank you for
-            purchasing a subscription! The details have been sent to your email
-            address: <strong className='text-darkBlue'>{email}</strong>, and
+            <strong className=' text-darkBlue'>{fullName}</strong>, Thank you
+            for purchasing a subscription! The details have been sent to your
+            email address:{' '}
+            <strong className='break-all text-darkBlue'>{email}</strong>, and
             also at phone number:
-            <strong className='text-darkBlue'>
+            <strong className=' text-darkBlue'>
               {' '}
               {phoneNumberWithoutAreaCode}
             </strong>
