@@ -39,7 +39,7 @@ I also added several features by myself:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://dawidbugajski.github.io/FakeJustJoin/)
+- Live Site URL: [Add live site URL here](https://dawidbugajski.github.io/multi-step-form/)
 
 ## My process
 

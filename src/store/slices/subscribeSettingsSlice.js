@@ -7,7 +7,7 @@ const subscriptionTypes = [
       monthly: 9,
       yearly: 90,
     },
-    icon: '/images/icon-arcade.svg',
+    icon: 'images/icon-arcade.svg',
   },
   {
     type: 'Advanced',
@@ -15,7 +15,7 @@ const subscriptionTypes = [
       monthly: 12,
       yearly: 120,
     },
-    icon: '/images/icon-advanced.svg',
+    icon: 'images/icon-advanced.svg',
   },
   {
     type: 'Pro',

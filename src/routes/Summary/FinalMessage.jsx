@@ -16,7 +16,7 @@ const FinalMessage = () => {
     <div className='pb-12 text-center'>
       <img
         className='py-4 mx-auto scale-75 lg:scale-100'
-        src='/images/icon-thank-you.svg'
+        src='images/icon-thank-you.svg'
         alt='icon-thank-you'
       />
       <TextContent
