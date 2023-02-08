@@ -25,9 +25,8 @@ const FinalMessage = () => {
           <>
             <strong className=' text-darkBlue'>{fullName}</strong>, Thank you
             for purchasing a subscription! The details have been sent to your
-            email address:{' '}
-            <strong className='break-all text-darkBlue'>{email}</strong>, and
-            also at phone number:
+            email address: <strong className=' text-darkBlue'>{email}</strong>,
+            and also at phone number:
             <strong className=' text-darkBlue'>
               {' '}
               {phoneNumberWithoutAreaCode}
